@@ -1,0 +1,19 @@
+---
+# handlers file for web-role
+
+- name: copy_file
+  copy: 
+    src: "{{ item }}"
+    dest: /usr/share/nginx/html
+  loop: "{{ files }}"
+
+
+- name: create_template
+  template:
+    src: index.j2
+    dest: /usr/share/nginx/html/index.html
+
+- name: restart_service
+  systemd:
+    name: "{{ service_name }}"
+    state: restarted

@@ -1,0 +1,21 @@
+- name: deliver motd file
+  template:
+    src: motd.j2
+    dest: /etc/motd
+    owner: root
+    group: root
+    mode: 0444
+
+- name: update machine
+  yum:
+    name: "*"
+    state: latest
+
+- name: install nginx
+  yum:
+    name: "{{ package_name }}"
+    state: "{{ package_version }}"
+  notify:  
+    - copy_file 
+    - create_template
+    - restart_service

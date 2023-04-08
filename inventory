@@ -1,0 +1,8 @@
+[locals]
+192.168.114.158
+[locals:vars]
+#package_name=pcp-pmda-nginx.x86_64
+#package_version=latest
+#ansible_become_pass="{{ ansible_sudo_pass }}"
+
+ansible_become_pass=mustafa

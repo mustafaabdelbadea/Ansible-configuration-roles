@@ -1,0 +1,22 @@
+---
+#This File contains the variable for template
+
+system_owner: mustafa
+courses:
+  - ansible
+  - aws
+  - terraform
+  - k8s
+  - docker
+title: Ansible Web Configuration
+track: Cloud PD
+
+package_name: pcp-pmda-nginx.x86_64
+package_version: latest
+
+service_name: nginx
+service_state: started
+
+
+files:
+  - styles.css
