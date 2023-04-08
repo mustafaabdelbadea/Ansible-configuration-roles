@@ -1,41 +1,52 @@
-Web
-=========
+
+
+<div align="center">
+<div>
+<h1>
+Web Application Configuration using Ansible
+</h1>
+</div>
+
+  <a href="https://github.com/mustafaabdelbadea/Ansible-configuration-roles">
+    <img src="./motd/files/ansible.png" alt="Logo" width="400" height="200">
+  </a>
+  
+  </div>
 
 A server configuration by installing nginx and create templates, copy files to machine
+Init the project using Ansible Galaxy 
+```
+ansible-galaxy init
+```
 
 Requirements
 ------------
 
- * To Run ansible configuration
- ** Os any linux distribution
- ** Install ansible 
-
+ - To Run ansible configuration
+ - Os any linux distribution
+ - Install ansible 
+ - Change in inventory file the ip of the mahcine 
+ - Change in ansible.config the username and password for the machine  
 Role Variables
 --------------
+- Variables located in motd/default/main.yml
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Run
+--------------
+```
+ansible-playbook web-role.yml
+```
 
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
 
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - motd
 
 License
 -------
 
 BSD
 
-Author Information
-------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
-"# Ansible-configuration-roles" 
